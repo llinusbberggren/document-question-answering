@@ -67,8 +67,6 @@ export AZURE_OPENAI_API_KEY="<your-provided-key>"
 export AZURE_OPENAI_DEPLOYMENT="<your-provided-deployment-name>"
 ```
 
-The supplied endpoint is an OpenAI-compatible `/openai/v1/responses` endpoint, so no separate API-version query parameter is needed.
-
 ## Run
 
 **1.** Confirm that the `Data/` directory contains the case documents.
