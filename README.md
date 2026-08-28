@@ -43,8 +43,8 @@ The supplied endpoint is an OpenAI-compatible `/openai/v1/responses` endpoint, s
 
 ## Run
 
-1. Confirm that the `Data/` directory contains the case documents.
-2. Create the local searchable index:
+**1.** Confirm that the `Data/` directory contains the case documents.
+**2.** Create the local searchable index:
 
 ```bash
 python3 preprocessing.py
@@ -52,8 +52,8 @@ python3 preprocessing.py
 
 This creates `working/documents.jsonl`. The `working/` folder is generated locally and ignored by Git. Run preprocessing again whenever documents in `Data/` change.
 
-3. Re-run the preprocessing step whenever files in `Data/` change.
-4. Ask the assistant a question:
+**3.** Re-run the preprocessing step whenever files in `Data/` change.
+**4.** Ask the assistant a question:
 
 ```bash
 python3 agent.py "How much sugar does the bakery use per week?"
