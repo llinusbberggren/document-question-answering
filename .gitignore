@@ -1,0 +1,23 @@
+# Local credentials and secrets
+LLM_instructions.txt
+.env
+*.env
+*.key
+*.pem
+credentials.*
+
+# Generated preprocessing output
+working/
+
+# Local Python environments
+.venv/
+venv/
+env/
+.conda/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# macOS metadata
+.DS_Store
