@@ -8,7 +8,7 @@ A lightweight, command-line RAG (Retrieval-Augmented Generation) agent to handle
 
 ## Key Technical Decisions
 
-### Lightweight Local Retrieval: 
+#### Lightweight Local Retrieval: 
 Instead of over-engineering with a heavy vector database, I built a custom, local text search that scores word overlap and groups related files. This keeps the app incredibly fast and requires zero extra setup.
 
 ### Contextual Page Adjacency: 
