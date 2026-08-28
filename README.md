@@ -17,7 +17,13 @@ To prevent information from getting cut off at page breaks, the search logic aut
 #### Delegating Arithmetic to Python: 
 Because LLMs are notoriously bad at multi-step math, I restricted the AI strictly to data extraction. Deterministic Python functions then take over to crunch the actual numbers, guaranteeing accurate math.
 
+## Possible Improvements
 
+#### Upgrading to Semantic Search: 
+The current search relies on basic token overlap and hardcoded synonyms. For a production system, replacing this with a lightweight vector-based semantic search would make retrieval much more resilient to natural variations in how users phrase their questions.
+
+#### Smarter Document Chunking: 
+The preprocessing script currently extracts entire PDF pages or full Excel sheets as single chunks. Moving to a chunking strategy that respects document structure—like keeping table headers tied to specific rows—would feed the LLM tighter, more relevant context, which lowers token costs and improves accuracy.
 
 ## Project layout
 
