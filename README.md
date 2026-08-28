@@ -54,6 +54,7 @@ python3 preprocessing.py
 This creates `working/documents.jsonl`. The `working/` folder is generated locally and ignored by Git. Run preprocessing again whenever documents in `Data/` change.
 
 **3.** Re-run the preprocessing step whenever files in `Data/` change.
+
 **4.** Ask the assistant a question:
 
 ```bash
