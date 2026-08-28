@@ -44,6 +44,7 @@ The supplied endpoint is an OpenAI-compatible `/openai/v1/responses` endpoint, s
 ## Run
 
 **1.** Confirm that the `Data/` directory contains the case documents.
+
 **2.** Create the local searchable index:
 
 ```bash
