@@ -15,13 +15,8 @@ Install dependencies:
 python3 -m pip install -r requirements.txt
 ```
 
-Configure Azure locally in the same terminal used to run the agent:
+Configure Azure locally in the same terminal used to run the agent
 
-```bash
-export AZURE_OPENAI_ENDPOINT="https://your-resource.services.ai.azure.com/openai/v1/responses"
-export AZURE_OPENAI_API_KEY="your-api-key"
-export AZURE_OPENAI_DEPLOYMENT="your-deployment-name"
-```
 
 ## Preprocess documents
 
@@ -58,11 +53,3 @@ verified deterministic results
 - `retrieval.py` performs local lexical retrieval and includes related records for multi-document case questions.
 - `calculations.py` handles recipe scaling, price tiers, freight, travel fares, and budget arithmetic.
 - `agent.py` orchestrates retrieval, Azure Responses API calls, Python calculations, and cited output.
-
-For numeric questions, Azure identifies values from the retrieved evidence and Python performs the arithmetic. For ambiguous cases, the agent reports supported alternatives rather than silently choosing one.
-
-
-```bash
-git status --short
-git diff --cached --name-only
-```
