@@ -2,6 +2,25 @@
 
 A small command-line document question-answering prototype for the AI Engineer case. It answers questions using the supplied PDFs and Excel workbooks, cites the source pages or sheets, and uses Python for deterministic calculations.
 
+## Solution Overview
+
+A lightweight, command-line RAG (Retrieval-Augmented Generation) agent to handle the math-heavy questions in this case study using the provided PDF and Excel files. Instead of relying on a complex database, the app locally processes these files into a simple JSONL index and uses a custom text-based search to quickly find the right context. Because LLMs can struggle with math, I split the workload: the LLM handles reading and extracting information, while standard Python functions crunch the actual numbers to guarantee accuracy.
+
+## Key Technical Decisions
+
+# Lightweight Local Retrieval: 
+Instead of over-engineering with a heavy vector database, I built a custom, local text search that scores word overlap and groups related files. This keeps the app incredibly fast and requires zero extra setup.
+
+# Contextual Page Adjacency: 
+To prevent information from getting cut off at page breaks, the search logic automatically pulls in the pages immediately before and after any highly relevant PDF page so the LLM gets the full, unbroken context.
+
+# Delegating Arithmetic to Python: 
+Because LLMs are notoriously bad at multi-step math, I restricted the AI strictly to data extraction. Deterministic Python functions then take over to crunch the actual numbers, guaranteeing accurate results.
+
+
+
+
+
 ## Project layout
 
 The case documents must be available locally in a folder named `Data/`:
@@ -79,10 +98,5 @@ verified calculation result
 - `calculations.py` handles recipe scaling, price tiers, freight, travel fares, and budget arithmetic.
 - `agent.py` orchestrates retrieval, Azure Responses API calls, Python calculations, and cited output.
 
-For numeric questions, Azure identifies values from the retrieved evidence and Python performs the arithmetic. For ambiguous cases, the agent reports supported alternatives rather than silently choosing one.
 
 
-```bash
-git status --short
-git diff --cached --name-only
-```
