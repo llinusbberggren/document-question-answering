@@ -8,13 +8,13 @@ A lightweight, command-line RAG (Retrieval-Augmented Generation) agent to handle
 
 ## Key Technical Decisions
 
-# Lightweight Local Retrieval: 
+### Lightweight Local Retrieval: 
 Instead of over-engineering with a heavy vector database, I built a custom, local text search that scores word overlap and groups related files. This keeps the app incredibly fast and requires zero extra setup.
 
-# Contextual Page Adjacency: 
+### Contextual Page Adjacency: 
 To prevent information from getting cut off at page breaks, the search logic automatically pulls in the pages immediately before and after any highly relevant PDF page so the LLM gets the full, unbroken context.
 
-# Delegating Arithmetic to Python: 
+### Delegating Arithmetic to Python: 
 Because LLMs are notoriously bad at multi-step math, I restricted the AI strictly to data extraction. Deterministic Python functions then take over to crunch the actual numbers, guaranteeing accurate results.
 
 
