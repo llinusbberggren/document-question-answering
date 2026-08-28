@@ -24,3 +24,6 @@ __pycache__/
 
 # Local case documents
 Data/
+
+!Data/
+Data/.gitkeep
