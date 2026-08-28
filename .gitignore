@@ -21,9 +21,3 @@ __pycache__/
 
 # macOS metadata
 .DS_Store
-
-# Local case documents
-Data/
-
-!Data/
-Data/.gitkeep
